@@ -64,7 +64,7 @@ var wordGuessGame = {
     wordInPlay: null,
     lettersOfTheWord: [],
     matchedLetters: [],
-    guessLetters: [],
+    guessedLetters: [],
     guessesLeft: 0,
     totalGuesses: 0,
     letterGuessed: null,
@@ -94,7 +94,7 @@ var wordGuessGame = {
     },
     // Wrong guess logic.
     updateGuesses: function(letter) {
-        if ((this.guessLetters.indexOf(letter) === -1) && (this.lettersOfTheWord.indexOf(letter) === -1)) {
+        if ((this.guessedLetters.indexOf(letter) === -1) && (this.lettersOfTheWord.indexOf(letter) === -1)) {
             // adds letter to guessedLetters array.
             this.guessedLetters.push(letter);
             // Subjects 1 from guesses.
@@ -152,7 +152,7 @@ var wordGuessGame = {
         this.guessesleft = 0;
         this.totalGuesses = 0;
         this.lettersGuessed = null;
-        this.setUpGame();
+        this.setupGame();
         this.rebuildWordView();
     },
 
@@ -197,7 +197,6 @@ wordGuessGame.setupGame();
 
 // Key press Logic.
 document.onkeyup = function(event) {
-    console.log(this);
     if(event.keyCode >= 49 && event.keyCode <= 90) {
         wordGuessGame.letterGuessed = event.key.toLowerCase();
         wordGuessGame.updatePage(wordGuessGame.letterGuessed);
