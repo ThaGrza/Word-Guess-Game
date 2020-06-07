@@ -1,13 +1,13 @@
 # Word Guess Game
 
 ## Screenshots / Gifs
-![Screenshot](/assets/screenshot.png)
+![Screenshot](/assets/images/screenshot.png)
 
 ## Motivation
-Giftastic is a small exercise to practice ajax.
+The word guess game was a homework assignment to practice javascript.
 
 ## How to
-To use Giftastic, simply visit https://ThaGrza.github.io/Giftastic/ and click on a category button to display their gifs or search and create your own category!
+To play the Word Guess Game simply go to https://thagrza.github.io/Word-Guess-Game/ and start guessing! Be warned, it is extremely difficult.
 
 ## Build Status
 N/A
@@ -26,7 +26,7 @@ N/A
 N/A
 
 ## API Reference
-https://developers.giphy.com/docs/sdk
+N/A
 
 ## Credits
 Andrew Griswold
