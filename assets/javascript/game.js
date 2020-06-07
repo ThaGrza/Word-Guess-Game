@@ -139,7 +139,7 @@ var wordGuessGame = {
         }
 
         // Updates Page.
-        document.querySelector("#current-word").innHTML = wordView;
+        document.querySelector("#current-word").innerHTML = wordView;
     },
 
     // Restarts game and variables.
