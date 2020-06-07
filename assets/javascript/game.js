@@ -65,18 +65,18 @@ var wordGuessGame = {
     lettersOfTheWord: [],
     matchedLetters: [],
     guessLetters: [],
-    guessesleft: 0,
+    guessesLeft: 0,
     totalGuesses: 0,
     letterGuessed: null,
     wins: 0,
 
     // Initializes game.
-    setUpGame: function() {
+    setupGame: function() {
         var objkeys = Object.keys(this.wordsToPick);
-        this.wordInPlay = objKeys[Math.floor(Math.random() * objKeys.length)];
+        this.wordInPlay = objkeys[Math.floor(Math.random() * objkeys.length)];
         this.lettersOfTheWord = this.wordInPlay.split("");
         this.rebuildWordView();
-        this.updateTotalGuesses();
+        this.processUpdateTotalGuesses();
     },
     // Updates page
     updatePage: function(letter) {
@@ -128,8 +128,8 @@ var wordGuessGame = {
     // Display for the word currently being guessed.
     rebuildWordView: function() {
         var wordView = "";
-        for (var i = 0; i < this.lettersOfTheWorld.length; i++) {
-            if (this.matchedLetters.indexOf(this.lettersofTheWord[i]) !== -1) {
+        for (var i = 0; i < this.lettersOfTheWord.length; i++) {
+            if (this.matchedLetters.indexOf(this.lettersOfTheWord[i]) !== -1) {
                 wordView += this.lettersOfTheWord[i];
             }
             // If it hasn't been guessed, display a "_" instead.
@@ -193,10 +193,11 @@ var wordGuessGame = {
 };
 
 // Initialized game on page reload.
-wordGuessGmae.setupGame();
+wordGuessGame.setupGame();
 
 // Key press Logic.
 document.onkeyup = function(event) {
+    console.log(this);
     if(event.keyCode >= 49 && event.keyCode <= 90) {
         wordGuessGame.letterGuessed = event.key.toLowerCase();
         wordGuessGame.updatePage(wordGuessGame.letterGuessed);
